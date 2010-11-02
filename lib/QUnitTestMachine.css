@@ -1,0 +1,11 @@
+#qunit_test_machine{
+	display:none;
+	padding:5px;
+}
+#qunit_test_machine_error{
+	background-color:red;
+	color:#FFFFFF;
+	padding:0.5em 0 0.5em 2.5em;
+	text-shadow:2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
