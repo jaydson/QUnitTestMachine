@@ -1,0 +1,46 @@
+h1. QUnit Test Machine
+
+http://jaydson.org
+Mantainer: Jaydson Gomes <email [at] jaydson org>
+
+QUnit Test Machine is a library based on QUnit to simplify Javascript tests.
+With this library is possible run tests in various javascript files dinamically.
+A simple API is provided, and  the developer just need to specify which files need to be tested.
+Sure that you must create your tests files before start, the ideia is just simplify the way to run tests with Qunit.
+This project is open sourced under the MIT
+Licence and can be used and modified by anyone. The requirements are:
+* A Good Browser like Firefox,Chrome,Opera and Safari
+
+h2. Third Party code used:
+* jQuery 1.4.3 by jQuery team
+* Qunit by Jörn Zaefferer and John Resig
+
+h2. Up & Running in a few steps
+First, open config.js file, this file have the configuration of your tests.
+* Set the path of application that you want run tests.
+QUnitTestMachine.defaults.path = 'http://localhost/Javascript/appteste/';
+
+* Set a file test prefix
+QUnitTestMachine.defaults.prefix = 'test_';
+For default the prefix is 'test_[script]', but you can change this.
+
+* Add the script that you want run tests
+	QUnitTestMachine.scripts.add({
+        "scripts": [
+            {name: "script4.js"},
+            {name: "script5.js"}]
+    });
+
+Two formats are suported: A simple String, like this-> add('script1.js','script2.js') or 
+an simple Json object like above.
+
+h2. How can you help?
+* Testing and sending Tickets!
+* Resolving existing tickets!
+* Spreading the word about the project!
+
+h2. How can I get Help?
+* First the "project's wiki":http://wiki.github.com/jaydson/QUnitTestMachine
+* You can send a message to anyone involved into the project (throught GitHub)
+* "QUnit Documentation":http://docs.jquery.com/Qunit
+* "jQuery Documentation":http://docs.jquery.com
