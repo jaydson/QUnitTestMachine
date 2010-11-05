@@ -17,7 +17,8 @@ h2. Third Party code used:
 * Qunit by Jörn Zaefferer and John Resig
 
 h2. Up & Running in a few steps
-To use QUnitTestMachine you dont need to care about another file then config.js.
+
+* To use QUnitTestMachine you dont need to care about another file then config.js.
 To start open config.js file, this file have the configuration of your tests.
 
 * Set the path of application that you want run tests
@@ -59,7 +60,7 @@ Now, simply set your scripts with a path:
 			{name: "another/path/to/my/script/script5.js"}]
 	});
 With this configurations QUnitTestMachine load all scripts and search for test files in the same path of your script.
-In this example, 'path/to/my/script/script4.js QUnitTestMachine' will search for 'path/to/my/script/test_script4.js'
+In this example, 'path/to/my/script/script4.js' QUnitTestMachine will search for 'path/to/my/script/test_script4.js'
 
 h2. How can you help?
 * Testing and sending Tickets!
