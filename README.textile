@@ -7,6 +7,7 @@ QUnit Test Machine is a library based on QUnit to simplify Javascript tests.
 With this library is possible run tests in various javascript files dinamically.
 A simple API is provided, and  the developer just need to specify which files need to be tested.
 Sure that you must create your tests files before start, the ideia is just simplify the way to run tests with Qunit.
+
 This project is open sourced under the MIT
 Licence and can be used and modified by anyone. The requirements are:
 * A Good Browser like Firefox,Chrome,Opera and Safari
@@ -16,28 +17,54 @@ h2. Third Party code used:
 * Qunit by Jörn Zaefferer and John Resig
 
 h2. Up & Running in a few steps
-First, open config.js file, this file have the configuration of your tests.
-* Set the path of application that you want run tests.
-QUnitTestMachine.defaults.path = 'http://localhost/Javascript/appteste/';
+To use QUnitTestMachine you dont need to care about another file then config.js.
+To start open config.js file, this file have the configuration of your tests.
+
+* Set the path of application that you want run tests
+Example:
+	QUnitTestMachine.defaults.path = 'http://localhost/Javascript/appteste/';
+QUnitTestMachine will use this like an root path of the application.
 
 * Set a file test prefix
-QUnitTestMachine.defaults.prefix = 'test_';
+Example:
+	QUnitTestMachine.defaults.prefix = 'test_';
 For default the prefix is 'test_[script]', but you can change this.
+This mean that if you have a script 'my_script.js' QUnitTestMachine will search for a file in the same path with name 'test_my_script.js'.
 
-* Add the script that you want run tests
+* Add the scripts that you want run tests
+Example
 	QUnitTestMachine.scripts.add({
         "scripts": [
             {name: "script4.js"},
             {name: "script5.js"}]
     });
+	
+Two formats are suported: 
+- A simple String array:
+QUnitTestMachine.scripts.add('script1.js','script2.js');
+QUnitTestMachine.scripts.add('script2.js');
 
-Two formats are suported: A simple String, like this-> add('script1.js','script2.js') or 
-an simple Json object like above.
+- A simple Json object like example above.
+
+* [NEW] Run tests in multiples paths
+Now is possible run tests in various paths.
+How to do this? Very simple!
+First check if your path property is set, something like that:
+	QUnitTestMachine.defaults.path = 'http://localhost/Javascript/appteste/';
+This is a root path of an application that you want to run tests.
+Now, simply set your scripts with a path:
+	QUnitTestMachine.scripts.add({
+		"scripts": [
+			{name: "path/to/my/script/script4.js"},
+			{name: "another/path/to/my/script/script5.js"}]
+	});
+With this configurations QUnitTestMachine load all scripts and search for test files in the same path of your script.
+In this example, 'path/to/my/script/script4.js QUnitTestMachine' will search for 'path/to/my/script/test_script4.js'
 
 h2. How can you help?
 * Testing and sending Tickets!
 * Resolving existing tickets!
-* Spreading the word about the project!
+* Spreading the world about the project!
 
 h2. How can I get Help?
 * First the "project's wiki":http://wiki.github.com/jaydson/QUnitTestMachine
